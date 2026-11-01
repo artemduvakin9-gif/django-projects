@@ -7,6 +7,19 @@
 </head>
 
 <body>
+    {% comment %} <header>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/posts/">все посты</a>
+        </nav> 
+    </header> {% endcomment %}
+    <header>
+        <nav>
+            <a href="{% url 'blog:home_page' %}"> Главная </a>
+            <a href="{% url 'blog:post_list' %}"> Все посты </a>
+        </nav>
+    </header>
+
     <h1>Главная страница</h1>
 </body>
 </html>
