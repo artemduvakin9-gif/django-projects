@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog-project</title>
-</head>
+{% extends "blog/base.html" %}
 
-<body>
-    {% comment %} <header>
-        <nav>
-            <a href="/">Главная</a>
-            <a href="/posts/">все посты</a>
-        </nav> 
-    </header> {% endcomment %}
-    <header>
-        <nav>
-            <a href="{% url 'blog:home_page' %}"> Главная </a>
-            <a href="{% url 'blog:post_list' %}"> Все посты </a>
-        </nav>
-    </header>
 
+
+
+{% block page_title %}
+    blog-project
+{% endblock page_title %}
+
+
+
+
+{% block page_content %}
     <h1>Главная страница</h1>
-</body>
-</html>
+{% endblock page_content %}
+
