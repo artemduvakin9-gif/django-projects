@@ -14,4 +14,5 @@ urlpatterns = [
     path('posts/<int:post_id>/', views.get_post_detail_view, name="post_detail"),
     path('posts/add/', views.post_add_view, name='post_add'),
     path('posts/<int:post_id>/edit/', views.post_edit_view, name="post_edit"),
+    path('posts/<int:post_id>/remove/', views.post_remove_view, name="post_remove"),
 ]
