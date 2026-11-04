@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Установленные
+    'django_bootstrap5',
+
+
     # собственные
     'apps.blog',
 
