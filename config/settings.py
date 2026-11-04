@@ -47,7 +47,8 @@ INSTALLED_APPS = [
 
 
     # собственные
-    'apps.blog',
+    'blog',
+    'users',
 
 
     
