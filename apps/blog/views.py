@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
 
@@ -19,7 +20,7 @@ def get_post_detail_view(request, post_id):
 
 
 
-
+@login_required
 def post_add_view(request):
     form = PostForm(request.POST or None)
 

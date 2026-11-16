@@ -1,8 +1,9 @@
+from django.conf import settings
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
-
+# from config.settings import DEFAULT_LOGIN_REDIRECT_URL
 
 def register_view(request):
     form = UserCreationForm(request.POST or None)
@@ -14,15 +15,14 @@ def register_view(request):
 
     return render(request, 'users/pages/register.html', {'form': form})
 
-
 def login_view(request):
     form = AuthenticationForm(data=request.POST or None)
 
     if request.method == "POST":
         if form.is_valid():
             login(request, form.get_user())
-            return redirect("blog:home_page")
-
+            next_url = request.GET.get('next', settings.DEFAULT_LOGIN_REDIRECT_URL)
+            return redirect(next_url)
     return render(request, 'users/pages/login.html', {'form': form})
 
 
